@@ -1,6 +1,20 @@
 ---
+import type { GetStaticPaths } from "astro";
 import MainLayout from "@/layouts/MainLayout.astro";
 import { useAstroBase } from "@/utils/useAstroBase";
+import { getCollection, render } from "astro:content";
+
+export const getStaticPaths = (async () => {
+  const servers = await getCollection("servers");
+  return servers.map((sv) => {
+    return {
+      params: { server: sv.data.name },
+      props: { sv },
+    };
+  });
+}) satisfies GetStaticPaths;
+
+const { sv } = Astro.props;
 ---
 
 <MainLayout>
@@ -15,7 +29,7 @@ import { useAstroBase } from "@/utils/useAstroBase";
                 class="mr-[var(--text-xl)] inline-block max-w-[var(--text-5xl)]"
               />dariussp's 24/7 6s pub
             </h1>
-            <h2>EU-West-1: Germany</h2>
+            <h2>{sv.data.name.toUpperCase()}: {sv.data.country}</h2>
           </center>
           <div
             class="mx-[var(--text-5xl)] mt-[var(--text-2xl)] grid grid-cols-3 gap-[var(--text-3xl)]"
@@ -33,7 +47,7 @@ import { useAstroBase } from "@/utils/useAstroBase";
                 <li>
                   <b>/discord</b> - Print our discord's server invite link
                 </li>
-                <li>/kofi - Support the server</li>
+                <li><b>/kofi</b> - Support the server</li>
               </ul>
             </div>
             <div>
@@ -53,8 +67,8 @@ import { useAstroBase } from "@/utils/useAstroBase";
                   <p class="">Copy the server connect by clicking below</p>
                   <button
                     class="steam-server-connect-button max-w-fit"
-                    onclick="()=>{navigator.clipboard.writeText('connect 51.38.120.248:26985')}"
-                    ><code>connect 51.38.120.248:26985</code></button
+                    onclick={`navigator.clipboard.writeText("connect ${sv.data.ip}")`}
+                    ><code>connect {sv.data.ip}</code></button
                   >
                 </div>
                 <div class="-mt-[0.5rem]">
