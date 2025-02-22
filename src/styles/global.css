@@ -8,14 +8,20 @@
 @theme {
     --font-weight-normal: 400;
     --font-weight-bold: 700;
-
-    --text-sm: 0.707rem;
+    /* sm: '0.833rem',
+    base: '1rem',
+    xl: '1.200rem',
+    '2xl': '1.440rem',
+    '3xl': '1.728rem',
+    '4xl': '2.074rem',
+    '5xl': '2.489rem', */
+    --text-sm: 0.833rem;
     --text-base: 1rem;
-    --text-xl: 1.414rem;
-    --text-2xl: 1.999rem;
-    --text-3xl: 2.827rem;
-    --text-4xl: 3.997rem;
-    --text-5xl: 5.652rem;
+    --text-xl: 1.200rem;
+    --text-2xl: 1.440rem;
+    --text-3xl: 1.728rem;
+    --text-4xl: 2.074rem;
+    --text-5xl: 2.489rem;
 }
 
 @layer components {

@@ -12,7 +12,7 @@ import "@/styles/global.css";
     <slot name="bottom-head" />
   </head>
 
-  <body>
+  <body class="bg-[#fff] text-[#333] dark:bg-[#333] dark:text-[#fff]">
     <HtmlTopBody />
     <slot name="top-body" />
     <slot name="main-body" />
@@ -20,3 +20,9 @@ import "@/styles/global.css";
     <HtmlBottomBody />
   </body>
 </html>
+
+<style>
+  html {
+    font-size: 14px;
+  }
+</style>
