@@ -1,0 +1,22 @@
+---
+import HtmlHead from "@/layouts/HtmlHead.astro";
+import HtmlTopBody from "@/layouts/HtmlTopBody.astro";
+import HtmlBottomBody from "@/layouts/HtmlBottomBody.astro";
+import "@/styles/global.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <HtmlHead />
+    <slot name="bottom-head" />
+  </head>
+
+  <body>
+    <HtmlTopBody />
+    <slot name="top-body" />
+    <slot name="main-body" />
+    <slot name="bottom-body" />
+    <HtmlBottomBody />
+  </body>
+</html>

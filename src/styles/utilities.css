@@ -1,0 +1,28 @@
+@utility discord-button {
+    background-color: #7289da;
+    color: #fff;
+    border-radius: 0.3rem;
+    padding: 0.6rem 1.25rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+@utility discord-channel{
+    /* blue backgroudn color */
+    background-color: #7289da;
+    color: #fff;
+    border-radius: 0.3rem;
+    padding: 0.15rem 0.1rem;
+    font-style: italic
+}
+
+@utility steam-server-connect-button{
+    background-color: #1b2838;
+    color: #fff;
+    border-radius: 0.3rem;
+    padding: 0.6rem 1.25rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}

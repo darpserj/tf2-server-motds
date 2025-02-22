@@ -1,0 +1,60 @@
+@layer base, components, utilities;
+
+@import "tailwindcss/preflight.css" layer(base);
+@import "tailwindcss/utilities.css" layer(utilities);
+@import "./utilities.css";
+
+
+@theme {
+    --font-weight-normal: 400;
+    --font-weight-bold: 700;
+
+    --text-sm: 0.707rem;
+    --text-base: 1rem;
+    --text-xl: 1.414rem;
+    --text-2xl: 1.999rem;
+    --text-3xl: 2.827rem;
+    --text-4xl: 3.997rem;
+    --text-5xl: 5.652rem;
+}
+
+@layer components {
+    .typography {
+        p {
+            font-size: var(--text-base);
+            font-weight: var(--font-weight-normal);
+            line-height: 1.75;
+        }
+
+        h1, h2, h3, h4, h5, h5 {
+            font-weight: var(--font-weight-bold);
+        }
+
+        h1 {
+            font-size: var(--text-5xl);
+        }
+
+        h2 {
+            font-size: var(--text-4xl);
+            line-height: 2;
+        }
+
+        h3 {
+            font-size: var(--text-3xl);
+            line-height: 1.25;
+        }
+
+        h4 {
+            font-size: var(--text-2xl);
+        }
+
+        h5 {
+            font-size: var(--text-xl);
+        }
+
+        small {
+            font-size: var(--text-sm);
+        }
+    }
+}
+

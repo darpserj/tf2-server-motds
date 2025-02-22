@@ -1,0 +1,85 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+---
+
+<MainLayout>
+  <Fragment slot="main-body">
+    <div class="grid min-h-screen place-items-center">
+      <section class="mt-[var(--text-5xl)]">
+        <div class="typography">
+          <center>
+            <h1>
+              <img
+                src="/tf2-logo.png"
+                class="mr-[var(--text-xl)] inline-block max-w-[var(--text-5xl)]"
+              />dariussp's 24/7 6s pub
+            </h1>
+            <h2>EU-West-1: Germany</h2>
+          </center>
+          <div
+            class="mx-[var(--text-5xl)] mt-[var(--text-2xl)] grid grid-cols-3 gap-[var(--text-3xl)]"
+          >
+            <div>
+              <h3>Useful Commands</h3>
+              <ul>
+                <li>
+                  <b>/pingplayers</b> - Ping discord members to join the server
+                </li>
+                <li><b>/votekick</b> - Kick 'em salty soldiers!</li>
+                <li>
+                  <b>/votemap</b> - Change the map while the game is still running
+                </li>
+                <li>
+                  <b>/discord</b> - Print our discord's server invite link
+                </li>
+                <li>/kofi - Support the server</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Are you new to the 6s format?</h3>
+              <p>
+                <a href="https://discord.gg/Qn6sr6nVcp" class="discord-channel"
+                  >Visit the #learning-resources channel on our Discord</a
+                >, check out the introduction to the format, learn from
+                influential people in the scene and watch tutorials on Rollouts,
+                Callouts, Hiding Spots and Traps!
+              </p>
+            </div>
+            <div>
+              <h3>Useful links</h3>
+              <div class="flex flex-col items-stretch gap-[var(--text-base)]">
+                <div class="">
+                  <p class="">Copy the server connect by clicking below</p>
+                  <button
+                    class="steam-server-connect-button max-w-fit"
+                    onclick="()=>{navigator.clipboard.writeText('connect 51.38.120.248:26985')}"
+                    ><code>connect 51.38.120.248:26985</code></button
+                  >
+                </div>
+                <div class="-mt-[0.5rem]">
+                  <p class="">
+                    Get the <span class="discord-channel bg-[#eeb400]"
+                      >@notify-games</span
+                    > role
+                  </p>
+                  <a
+                    href="https://discord.com/invite/DwAq9srYZJ"
+                    class="discord-button mt-[0.25rem] block max-w-[17.5rem] text-center"
+                    >Join the discord</a
+                  >
+                </div>
+                <a
+                  class="block h-[4rem] w-[17.5rem] bg-contain bg-no-repeat"
+                  href="https://ko-fi.com/dariussp/tiers"
+                  style={{
+                    "background-image":
+                      'url("https://storage.ko-fi.com/cdn/brandasset/v2/support_me_on_kofi_beige.png")',
+                  }}></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </Fragment>
+</MainLayout>
