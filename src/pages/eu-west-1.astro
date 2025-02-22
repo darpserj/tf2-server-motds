@@ -1,5 +1,6 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
+import { useAstroBase } from "@/utils/useAstroBase";
 ---
 
 <MainLayout>
@@ -10,7 +11,7 @@ import MainLayout from "@/layouts/MainLayout.astro";
           <center>
             <h1>
               <img
-                src="/tf2-logo.png"
+                src={useAstroBase("/tf2-logo.png")}
                 class="mr-[var(--text-xl)] inline-block max-w-[var(--text-5xl)]"
               />dariussp's 24/7 6s pub
             </h1>

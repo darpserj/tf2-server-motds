@@ -10,4 +10,5 @@ export default defineConfig({
   },
   site: 'https://darpserj.github.io',
   base: 'tf2-server-motds',
+  
 });
