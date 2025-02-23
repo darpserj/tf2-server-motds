@@ -1,4 +1,15 @@
+---
+import { useAstroBase } from "@/utils";
+---
+
 <meta charset="UTF-8" />
+<link
+  rel="preload"
+  as="font"
+  type="font/woff2"
+  href={useAstroBase("/fonts/tf2build-subset.woff2")}
+  crossorigin="anonymous"
+/>
 <meta name="viewport" content="width=device-width" />
 <meta name="generator" content={Astro.generator} />
 <title>Astro Basics</title>
