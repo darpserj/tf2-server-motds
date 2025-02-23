@@ -8,13 +8,7 @@
 @theme {
     --font-weight-normal: 400;
     --font-weight-bold: 700;
-    /* sm: '0.833rem',
-    base: '1rem',
-    xl: '1.200rem',
-    '2xl': '1.440rem',
-    '3xl': '1.728rem',
-    '4xl': '2.074rem',
-    '5xl': '2.489rem', */
+
     --text-sm: 0.833rem;
     --text-base: 1rem;
     --text-xl: 1.200rem;
@@ -22,6 +16,37 @@
     --text-3xl: 1.728rem;
     --text-4xl: 2.074rem;
     --text-5xl: 2.489rem;
+
+    --breakpoint-*: initial;
+    --breakpoint-sm: 40rem;
+    --breakpoint-md: 50rem;
+    --breakpoint-lg: 64rem;
+}
+
+@media screen and (min-width: 50rem) {
+    :root {
+        --text-sm: 0.8rem;
+        --text-base: 1rem;
+        --text-xl: 1.250rem;
+        --text-2xl: 1.563rem;
+        --text-3xl: 1.954rem;
+        --text-4xl: 2.442rem;
+        --text-5xl: 3.053rem;
+    }
+    
+}
+
+@media screen and (min-width: 64rem) {
+    :root {
+        --text-sm: 0.750rem;
+        --text-base: 1rem;
+        --text-xl: 1.333rem;
+        --text-2xl: 1.777rem;
+        --text-3xl: 2.369rem;
+        --text-4xl: 3.158rem;
+        --text-5xl: 4.210rem;
+    }
+    
 }
 
 @layer components {

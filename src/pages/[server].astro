@@ -19,8 +19,8 @@ const { sv } = Astro.props;
 
 <MainLayout>
   <Fragment slot="main-body">
-    <div class="grid min-h-screen place-items-center">
-      <section class="mt-[var(--text-5xl)]">
+    <div class="mx-auto grid min-h-screen place-items-center md:container">
+      <section class="">
         <div class="typography">
           <center>
             <h1>
@@ -69,7 +69,7 @@ const { sv } = Astro.props;
                 <div class="">
                   <p class="">Copy the server connect by clicking below</p>
                   <button
-                    class="steam-server-connect-button max-w-fit"
+                    class="steam-server-connect-button w-full"
                     onclick={`navigator.clipboard.writeText("connect ${sv.data.ip}")`}
                     ><code>connect {sv.data.ip}</code></button
                   >
@@ -82,12 +82,12 @@ const { sv } = Astro.props;
                   </p>
                   <a
                     href="https://discord.com/invite/DwAq9srYZJ"
-                    class="discord-button mt-[0.25rem] block max-w-[17.5rem] text-center"
+                    class="discord-button mt-[0.25rem] block w-full text-center"
                     >Join the discord</a
                   >
                 </div>
                 <a
-                  class="block h-[4rem] w-[17.5rem] bg-contain bg-no-repeat"
+                  class="block aspect-[652/131] w-full bg-contain bg-no-repeat"
                   href="https://ko-fi.com/dariussp/tiers"
                   style={{
                     "background-image":
