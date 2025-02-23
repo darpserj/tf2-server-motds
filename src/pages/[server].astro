@@ -28,7 +28,8 @@ const { sv } = Astro.props;
 
 <MainLayout>
   <Fragment slot="main-body">
-    <div class="mx-auto grid min-h-screen place-items-center md:container">
+    <div
+      class="relative mx-auto grid min-h-screen place-items-center md:container">
       <section class="">
         <div class="typography">
           <center>
@@ -44,26 +45,27 @@ const { sv } = Astro.props;
           </center>
           <div
             class="mx-[var(--text-5xl)] mt-[var(--text-2xl)] grid grid-cols-3 gap-[var(--text-3xl)]">
-            <div>
-              <h3>Useful Commands</h3>
+            <div class="">
+              <h3 class="mb-[0.25rem]">Useful Commands</h3>
               <ul>
                 <li>
-                  <b>/pingplayers</b> - Ping discord members to join the server
+                  <b>⭐/pingplayers⭐</b> - Ping discord members to join the server
                 </li>
-                <li><b>/votekick</b> - Kick 'em salty soldiers!</li>
+                <li><b>/votekick, /votemap,</b></li>
+
                 <li>
-                  <b>/votemap</b> - Change the map while the game is still running
-                </li>
-                <li>
-                  <b>/discord</b> - Print our discord's server invite link
+                  <b>/discord</b> - Discord group
                 </li>
                 <li><b>/kofi</b> - Support the server</li>
+                <li><b>/bp</b> - Backpack viewer</li>
               </ul>
             </div>
             <div>
-              <h3>Are you new to the 6s format?</h3>
+              <h3 class="mb-[0.25rem]">Are you new to the 6s format?</h3>
               <p>
-                <a href="https://discord.gg/Qn6sr6nVcp" class="discord-channel"
+                <a
+                  href="https://discord.gg/Qn6sr6nVcp"
+                  class="discord-channel hover:bg-[#7289da]/75"
                   >Visit the #learning-resources channel on our Discord</a
                 >. The only classes allowed on the server are <b>Scout</b>, <b
                   >Soldier</b
@@ -75,30 +77,30 @@ const { sv } = Astro.props;
               </p>
             </div>
             <div>
-              <h3>Useful links</h3>
+              <h3 class="">Useful links</h3>
               <div class="flex flex-col items-stretch gap-[var(--text-base)]">
                 <div class="">
                   <p class="">Copy the server connect by clicking below</p>
                   <button
-                    class="steam-server-connect-button w-full"
+                    class="rounded-[0.35rem] border-2 p-[0.5rem] hover:cursor-pointer hover:bg-[#2C2F33] hover:text-white"
                     onclick={`navigator.clipboard.writeText("connect ${sv.data.ip}")`}
-                    ><code>connect {sv.data.ip}</code></button
+                    ><code>{sv.data.ip}</code></button
                   >
                 </div>
                 <div class="-mt-[0.5rem]">
                   <p class="">
-                    Get the <span class="discord-channel bg-[#eeb400]"
+                    Get the <span class="discord-channel bg-[#CF7336]"
                       >@notify-games</span
                     > role
                   </p>
                   <a
                     href="https://discord.com/invite/DwAq9srYZJ"
-                    class="discord-button mt-[0.25rem] block w-full text-center"
+                    class="discord-button mt-[0.25rem] block w-full text-center hover:bg-[#6172b3]"
                     >Join the discord</a
                   >
                 </div>
                 <a
-                  class="block aspect-[652/131] w-full bg-contain bg-no-repeat"
+                  class="block aspect-[652/131] w-full bg-contain bg-no-repeat hover:brightness-75"
                   href="https://ko-fi.com/dariussp/tiers"
                   style={{
                     "background-image": `url(${optimizedKofi.src})`,

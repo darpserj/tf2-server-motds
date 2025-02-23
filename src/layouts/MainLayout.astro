@@ -2,7 +2,16 @@
 import HtmlHead from "@/layouts/HtmlHead.astro";
 import HtmlTopBody from "@/layouts/HtmlTopBody.astro";
 import HtmlBottomBody from "@/layouts/HtmlBottomBody.astro";
+import texture from "@/assets/background-texture.jpg";
 import "@/styles/global.css";
+import { getImage } from "astro:assets";
+
+const optimizedBgTexture = await getImage({
+  src: texture,
+  widths: [640, 800, 1024],
+  format: "webp",
+  quality: 40,
+});
 ---
 
 <!doctype html>
@@ -12,7 +21,12 @@ import "@/styles/global.css";
     <slot name="bottom-head" />
   </head>
 
-  <body class="bg-[#fff] text-[#333] dark:bg-[#333] dark:text-[#fff]">
+  <body
+    class="relative bg-[#000]/50 text-[#fff] bg-blend-color"
+    style={{
+      backgroundImage: `url(${optimizedBgTexture.src})`,
+    }}>
+    <div class="absolute inset-0 backdrop-blur-[1.5px]"></div>
     <HtmlTopBody />
     <slot name="top-body" />
     <slot name="main-body" />
