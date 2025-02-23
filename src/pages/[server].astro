@@ -1,10 +1,11 @@
 ---
 import type { GetStaticPaths } from "astro";
 import MainLayout from "@/layouts/MainLayout.astro";
-import { useAstroBase } from "@/utils/useAstroBase";
-import { getCollection, render } from "astro:content";
-import { getImage, Image, Picture } from "astro:assets";
+import { useIsChristmas } from "@/utils";
+import { getCollection } from "astro:content";
+import { getImage, Image } from "astro:assets";
 import tf2logo from "@/assets/tf2-logo.png";
+import festivetf2logo from "@/assets/tf2-logo-festive.png";
 import kofi from "@/assets/kofi.webp";
 
 const optimizedKofi = await getImage({
@@ -12,6 +13,21 @@ const optimizedKofi = await getImage({
   widths: [174, 288],
   format: undefined,
 });
+
+const [altLogo, logo] = await Promise.all([
+  getImage({
+    src: festivetf2logo,
+    width: 72,
+    format: "webp",
+    quality: 40,
+  }),
+  getImage({
+    src: tf2logo,
+    width: 72,
+    format: "webp",
+    quality: 40,
+  }),
+]);
 
 export const getStaticPaths = (async () => {
   const servers = await getCollection("servers");
@@ -34,11 +50,11 @@ const { sv } = Astro.props;
         <div class="typography">
           <center>
             <h1>
-              <Picture
+              <Image
+                id={`logo`}
                 alt={``}
-                widths={[36, 48, 72]}
-                src={tf2logo}
-                class="inline-block max-w-[var(--text-5xl)]"
+                src={useIsChristmas() ? festivetf2logo : tf2logo}
+                class="-mt-[0.75rem] mr-[1rem] inline-block max-w-[var(--text-5xl)]"
               />dariussp's 24/7 6s pub
             </h1>
             <h2>{sv.data.name.toUpperCase()}: {sv.data.country}</h2>
@@ -113,3 +129,12 @@ const { sv } = Astro.props;
     </div>
   </Fragment>
 </MainLayout>
+
+<script is:inline define:vars={{ logo, altLogo }}>
+  function useIsChristmas() {
+    return new Date().getMonth() === 11 || new Date().getMonth() === 0;
+  }
+  document.querySelector("#logo").src = useIsChristmas()
+    ? altLogo.src
+    : logo.src;
+</script>

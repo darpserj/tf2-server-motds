@@ -3,15 +3,25 @@ import HtmlHead from "@/layouts/HtmlHead.astro";
 import HtmlTopBody from "@/layouts/HtmlTopBody.astro";
 import HtmlBottomBody from "@/layouts/HtmlBottomBody.astro";
 import texture from "@/assets/background-texture.jpg";
+import christmasTexture from "@/assets/background-texture-christmas.png";
 import "@/styles/global.css";
 import { getImage } from "astro:assets";
+import { useIsChristmas } from "@/utils";
 
-const optimizedBgTexture = await getImage({
-  src: texture,
-  widths: [640, 800, 1024],
-  format: "webp",
-  quality: 40,
-});
+const [bg, altBg] = await Promise.all([
+  getImage({
+    src: texture,
+    widths: [640, 800, 1024],
+    format: "webp",
+    quality: 40,
+  }),
+  getImage({
+    src: christmasTexture,
+    widths: [640, 800, 1024],
+    format: "webp",
+    quality: 40,
+  }),
+]);
 ---
 
 <!doctype html>
@@ -22,9 +32,9 @@ const optimizedBgTexture = await getImage({
   </head>
 
   <body
-    class="relative bg-[#000]/50 text-[#fff] bg-blend-color"
+    class="relative bg-[#000]/50 bg-cover text-[#fff] bg-blend-color"
     style={{
-      backgroundImage: `url(${optimizedBgTexture.src})`,
+      backgroundImage: `url(${useIsChristmas() ? altBg.src : bg.src})`,
     }}>
     <div class="absolute inset-0 backdrop-blur-[1.5px]"></div>
     <HtmlTopBody />
@@ -34,3 +44,13 @@ const optimizedBgTexture = await getImage({
     <HtmlBottomBody />
   </body>
 </html>
+
+<script is:inline define:vars={{ bg, altBg }}>
+  function useIsChristmas() {
+    return new Date().getMonth() === 11 || new Date().getMonth() === 0;
+  }
+
+  document.querySelector("body").style.backgroundImage = `url(${
+    useIsChristmas() ? altBg.src : bg.src
+  })`;
+</script>
