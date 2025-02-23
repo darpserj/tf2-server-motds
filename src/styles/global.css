@@ -5,11 +5,12 @@
 @import "./utilities.css";
 
 @font-face {
+    /* Note to self: Source order apparently matters, so I should go fuck myself. */
     font-family: 'Tfbuild';
     src: 
-        url('/tf2-server-motds/fonts/tf2build-subset.ttf') format('truetype'),
+        url('/tf2-server-motds/fonts/tf2build-subset.woff2') format('woff2'),
         url('/tf2-server-motds/fonts/tf2build-subset.zopfli.woff') format('woff'),
-        url('/tf2-server-motds/fonts/tf2build-subset.woff2') format('woff2');
+        url('/tf2-server-motds/fonts/tf2build-subset.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
