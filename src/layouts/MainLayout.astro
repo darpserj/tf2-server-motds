@@ -22,6 +22,9 @@ const [bg, altBg] = await Promise.all([
     quality: 40,
   }),
 ]);
+
+const bgSrc = bg.src;
+const altBgSrc = altBg.src;
 ---
 
 <!doctype html>
@@ -45,12 +48,12 @@ const [bg, altBg] = await Promise.all([
   </body>
 </html>
 
-<script is:inline define:vars={{ bg, altBg }}>
+<script is:inline define:vars={{ bgSrc, altBgSrc }}>
   function useIsChristmas() {
     return new Date().getMonth() === 11 || new Date().getMonth() === 0;
   }
 
   document.querySelector("body").style.backgroundImage = `url(${
-    useIsChristmas() ? altBg.src : bg.src
+    useIsChristmas() ? altBgSrc : bgSrc
   })`;
 </script>

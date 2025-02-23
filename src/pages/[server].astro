@@ -40,6 +40,9 @@ export const getStaticPaths = (async () => {
 }) satisfies GetStaticPaths;
 
 const { sv } = Astro.props;
+
+let altLogoSrc = altLogo.src;
+let logoSrc = logo.src;
 ---
 
 <MainLayout>
@@ -130,11 +133,9 @@ const { sv } = Astro.props;
   </Fragment>
 </MainLayout>
 
-<script is:inline define:vars={{ logo, altLogo }}>
+<script is:inline define:vars={{ logoSrc, altLogoSrc }}>
   function useIsChristmas() {
     return new Date().getMonth() === 11 || new Date().getMonth() === 0;
   }
-  document.querySelector("#logo").src = useIsChristmas()
-    ? altLogo.src
-    : logo.src;
+  document.querySelector("#logo").src = useIsChristmas() ? altLogoSrc : logoSrc;
 </script>
