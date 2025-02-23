@@ -3,6 +3,8 @@ import type { GetStaticPaths } from "astro";
 import MainLayout from "@/layouts/MainLayout.astro";
 import { useAstroBase } from "@/utils/useAstroBase";
 import { getCollection, render } from "astro:content";
+import { Image, Picture } from "astro:assets";
+import tf2logo from "@/assets/tf2-logo.png";
 
 export const getStaticPaths = (async () => {
   const servers = await getCollection("servers");
@@ -24,9 +26,11 @@ const { sv } = Astro.props;
         <div class="typography">
           <center>
             <h1>
-              <img
-                src={useAstroBase("/tf2-logo.png")}
-                class="mr-[var(--text-xl)] inline-block max-w-[var(--text-5xl)]"
+              <Picture
+                alt={``}
+                widths={[36, 48, 72]}
+                src={tf2logo}
+                class="inline-block max-w-[var(--text-5xl)]"
               />dariussp's 24/7 6s pub
             </h1>
             <h2>{sv.data.name.toUpperCase()}: {sv.data.country}</h2>
