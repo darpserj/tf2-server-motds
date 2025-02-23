@@ -53,7 +53,9 @@ const altBgSrc = altBg.src;
     return new Date().getMonth() === 11 || new Date().getMonth() === 0;
   }
 
-  document.querySelector("body").style.backgroundImage = `url(${
-    useIsChristmas() ? altBgSrc : bgSrc
-  })`;
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelector("body").style.backgroundImage = `url(${
+      useIsChristmas() ? altBgSrc : bgSrc
+    })`;
+  });
 </script>

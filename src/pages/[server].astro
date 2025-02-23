@@ -137,5 +137,10 @@ let logoSrc = logo.src;
   function useIsChristmas() {
     return new Date().getMonth() === 11 || new Date().getMonth() === 0;
   }
-  document.querySelector("#logo").src = useIsChristmas() ? altLogoSrc : logoSrc;
+
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelector("#logo").src = useIsChristmas()
+      ? altLogoSrc
+      : logoSrc;
+  });
 </script>
