@@ -3,8 +3,15 @@ import type { GetStaticPaths } from "astro";
 import MainLayout from "@/layouts/MainLayout.astro";
 import { useAstroBase } from "@/utils/useAstroBase";
 import { getCollection, render } from "astro:content";
-import { Image, Picture } from "astro:assets";
+import { getImage, Image, Picture } from "astro:assets";
 import tf2logo from "@/assets/tf2-logo.png";
+import kofi from "@/assets/kofi.webp";
+
+const optimizedKofi = await getImage({
+  src: kofi,
+  widths: [174, 288],
+  format: undefined,
+});
 
 export const getStaticPaths = (async () => {
   const servers = await getCollection("servers");
@@ -94,8 +101,7 @@ const { sv } = Astro.props;
                   class="block aspect-[652/131] w-full bg-contain bg-no-repeat"
                   href="https://ko-fi.com/dariussp/tiers"
                   style={{
-                    "background-image":
-                      'url("https://storage.ko-fi.com/cdn/brandasset/v2/support_me_on_kofi_beige.png")',
+                    "background-image": `url(${optimizedKofi.src})`,
                   }}></a>
               </div>
             </div>
