@@ -1,48 +1,35 @@
-# Astro Starter Kit: Basics
+# Dariussp's TF2 Servers Message of The Day
 
-```sh
-npm create astro@latest -- --template basics
-```
+## Table of Contents
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+1. [Current Version](#current-version)
+   - [Normal Variant](#normal-variant)
+   - [Christmas Variant](#christmas-variant)
+2. [Tools Used](#tools-used)
+3. [Discord](#discord-server)
+4. [Past Verstions](#past-versions)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Current Version
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+### Normal Variant
 
-## 🚀 Project Structure
+![](./git-assets/v1-screenshots/normal.png)
 
-Inside of your Astro project, you'll see the following folders and files:
+### Christmas Variant
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+> This variant get's automatically shown if the current month is either December or January.
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+![](./git-assets/v1-screenshots/christmas.png)
 
-## 🧞 Commands
+## Tools Used
 
-All commands are run from the root of the project, from a terminal:
+- [Astro.build](https://astro.build/)
+- [TailwindCSS](https://tailwindcss.com/)
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Discord Server
 
-## 👀 Want to learn more?
+If you're interested in playing some Team Fortress 2 with people interested in the 6s format, [join our Discord server here](https://discord.com/invite/DwAq9srYZJ)
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Past versions
+
+> None. Yet. :D
