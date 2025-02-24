@@ -28,7 +28,7 @@
 
 ## Discord Server
 
-If you're interested in playing some Team Fortress 2 with people interested in the 6s format, [join our Discord server here](https://discord.com/invite/DwAq9srYZJ)
+If you're interested in playing some Team Fortress 2 with people who like the 6s RGL format, [join our Discord server here](https://discord.com/invite/DwAq9srYZJ)
 
 ## Past versions
 
